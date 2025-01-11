@@ -1,0 +1,590 @@
+html {
+  font-size:18px;
+  overflow-x: auto;
+  background-color:#000000;
+  color:#E3E3E3;
+}
+
+body {
+  position:absolute;
+  //width:max-content;
+  z-index:-1;
+  font-family: "Arial", sans-serif;
+  font-size:18px;
+  margin:5px;
+  background-color:#000000;
+}
+
+ul {
+  padding-left: 20px;
+  margin-top: 0px;
+}
+
+div.leaflet-control-attribution {
+  display:none;
+}
+
+.Local {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.Express {
+  background-color: #EED700;
+  color: #000000;
+}
+
+.ExpressOld {
+  background-color: #FFFF00;
+  color: #000000;
+}
+
+.Rapid {
+  background-color: #0060A9;
+  color: #FFFFFF;
+}
+
+.RapidOld {
+  background-color: #0072B9;
+  color: #FFFFFF;
+}
+
+.Rush {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.Spirit {
+  background-color: #008000;
+  color: #FFFFFF;
+}
+
+.DART {
+  background-color: #696969;
+  color: #FFFFFF;
+}
+
+.Special {
+  background-color: #FF0000;
+  color: #FFFFFF;
+}
+
+img#busPhoto {
+  outline: 2px solid blue;
+}
+
+table#photoTable {
+  margin-top:10px;
+  outline: 2px solid black;
+}
+
+div#description {
+  margin-top:25px;
+  outline: 2px solid black;
+  padding:5px;
+}
+
+div.Alert {
+  left: 4px;
+  position:sticky;
+  background-color: #FF0000;
+  color: #FFFFFF;
+  text-align:center;
+  font-weight:bold;
+  outline: 2px solid black;
+  margin-bottom:7px;
+  display:none;
+}
+
+div#Advisories {
+  background-color: #FFFF00;
+  color: #000000;
+  text-align:left;
+  font-weight:bold;
+  outline: 2px solid black;
+  margin-bottom:7px;
+  margin-top:7px;
+}
+
+div#DepartureList {
+  white-space: nowrap;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip:hover .tooltiptext2 {
+  visibility: visible;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  font-size:12;
+  padding: 3px 0;
+  border-radius: 3px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltiptext2 {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  font-size:12;
+  padding: 3px 0;
+  border-radius: 3px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip .tooltiptext {
+  top: -5px;
+  left: 133%;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+.tooltip .tooltiptext2 {
+  top: -5px;
+  left: 133%;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+.cancel {
+  background-color: #FF0000;
+  color: #EEEEEE;
+  /* text-decoration: line-through; */
+}
+
+RunInst {
+  display:block;
+  max-width: 50%
+}
+
+mapctrl {
+  display: none;
+}
+
+table#times {
+  display:block;
+  width:max-content;
+  width:49%;
+  max-width:49%;
+  overflow-x:auto;
+  white-space: nowrap;
+  /* outline-style: solid; */
+  outline-color: #000000;
+  outline-width: 3px;
+}
+
+table.runtrips {
+  display:block;
+  position:fixed;
+  float:left;
+  /* right:.5625%; */
+  left: 49.5%;
+  width:50%;
+  max-width:50%;
+  max-height:98%;
+  overflow-y:auto;
+  overflow-x: auto;
+  top:1%;
+  outline-style: solid;
+  outline-color: #000000;
+  outline-width: 3px;
+  border-style: none;
+  text-align: left;
+  /* white-space: nowrap; */
+}
+
+td#StopTime {
+  text-align: center;
+}
+
+a {
+  /*color: #2060FF;*/
+  /* color: #0077FF;*/
+  color: #00AAFF;
+  /*background-color: FFFFFF;*/
+  text-decoration: none;
+  text-transform: none;
+}
+
+a#rushLink {
+  /*color: #2060FF;*/
+  /* color: #0077FF;*/
+  color: #003FFF;
+  /*background-color: FFFFFF;*/
+  text-decoration: none;
+  text-transform: none;
+}
+
+a#darkLink {
+  /*color: #0000DD;*/
+  color: #FFAA00;
+}
+
+a:hover {
+  /*background-color: #E2E2E2;*/
+  color:#FFAA00;
+  background-color: #4F4F4F;
+}
+
+a#darkLink:hover {
+  background-color: #444444;
+  color:#FFAA00;
+}
+
+a#rushLink:hover {
+  background-color: #444444;
+  color:#FFAA00;
+}
+
+#PageTitle {
+  max-width:40%;
+}
+
+#fakeLink {
+  color: #00AAFF;
+  /*background-color: FFFFFF;*/
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
+#fakeLink:hover {
+  color:#FFAA00;
+  background-color: #5F5F5F;
+}
+
+#fakeLinkDark {
+  color: #FFAA00;
+  /*background-color: FFFFFF;*/
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
+#fakeLinkDark:hover {
+  color:#FFAA00;
+  background-color: #444444;
+}
+
+td#spacer {
+  height:18px;
+}
+
+x1#noLink {
+  color: #CCCCCC;
+  /*background-color: FFFFFF;*/
+  text-decoration: none;
+  text-transform: none;
+  cursor: not-allowed;
+}
+
+#route {
+  padding-left:6px;
+  padding-right:6px;
+  outline-style: solid;
+  outline-color: #808080;
+  outline-width: 2px;
+  margin-right: 2px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+runtbl {
+  position: absolute;
+  z-index:-1;
+  top: 90;
+  font-size:18px;
+  margin:5px;
+  width:100%;
+}
+
+dest {
+  position: absolute;
+  max-width: 49%;
+}
+
+tbody {
+  margin:5px;
+  font-size:18px;
+}
+
+input {
+  background-color:#777777;
+}
+
+select {
+  background-color:#777777;
+}
+
+button {
+  background-color:#777777;
+  outline-style: solid;
+  outline-color: #999999;
+  outline-width: 1px;
+  border-radius: 25px;
+}
+
+input#txtRtFilter {
+  max-width: 50px;
+}
+
+a:target {
+  color: white;
+  background: #FF0000;
+  padding-left:3px;
+  padding-right:3px;
+}
+
+nextDeparts {
+  position: inline-block;
+  float: right;
+  right: 1%;
+  top: 1%;
+}
+
+mapcontainer {
+  position: fixed;
+  width:100%;
+  height:100%;
+  left: 0%;
+  top: 0%;
+  margin-right:0px;
+  margin-left:0px;
+  outline-style: solid;
+  outline-color: #000000;
+  outline-width: 2px;
+  z-index:-1;
+}
+
+mapcontainer2 {
+  display:inline-block;
+  position: relative;
+  width:49%;
+  height:95%;
+  left: 0.0%;
+  top: 1%;
+  margin-right:0px;
+  margin-left:0px;
+  outline-style: solid;
+  outline-color: #000000;
+  outline-width: 2px;
+}
+
+div#mapid {
+  position: relative;
+  width:100%;
+  height:100%;
+  font-size:13;
+}
+
+th#Sep {
+  outline-style: solid;
+  outline-color: #ffffff;
+  outline-width: 2px;
+  background-color: #ffffff;
+  max-width:2px;
+  margin:0px;
+  padding:0px;
+}
+
+td#Sep {
+  outline-style: solid;
+  outline-color: #000000;
+  outline-width: 2px;
+  background-color: 000000;
+  max-width:2px;
+}
+
+tr#departuresTitle {
+  font-size:18px;
+  background-color:#C0C0C0;
+  color:#000000;
+  z-index:999;
+}
+
+tr#departureLine {
+  /* white-space: nowrap; */
+  outline-style: solid;
+  outline-color: #000000;
+  outline-width: 0px;
+  background-color: #5D5D5D;
+}
+
+tr#departureLineMWF {
+  /* white-space: nowrap; */
+  outline-style: solid;
+  outline-color: #000000;
+  outline-width: 0px;
+  background-color: #FFFF60;
+}
+
+tr#departureLineTT {
+  /* white-space: nowrap; */
+  outline-style: solid;
+  outline-color: #000000;
+  outline-width: 0px;
+  background-color: #A0FFFF;
+}
+
+td#TimingPoint {
+  color:white;
+  background-color:red;
+}
+
+th#RunID {
+  padding-left:5px;
+  padding-right:5px;
+}
+
+td#RunID {
+  padding-left:5px;
+  padding-right:5px;
+  min-width:58px;
+}
+
+th#ExtraID {
+  padding-left:6px;
+  padding-right:5px;
+  min-width:58px;
+}
+
+td#ExtraID {
+  padding-left:6px;
+  padding-right:5px;
+}
+
+th#RtID {
+  min-width:max-content;
+  text-align:center;
+  white-space: nowrap;
+}
+
+td#RtID {
+  min-width:max-content;
+  text-align:right;
+  white-space: nowrap;
+}
+
+th#RtDest {
+  padding-left:4px;
+  padding-right:4px;
+}
+
+td#RtDest {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left:4px;
+  padding-right:4px;
+}
+
+td#RtDestMWF {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left:4px;
+  padding-right:4px;
+  background-color: #FFFF60;
+}
+
+td#RtDestTT {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left:4px;
+  padding-right:4px;
+  background-color: #A0FFFF;
+}
+
+td#RtRoute {
+  text-align:right;
+}
+
+th#RtTime {
+  text-align:center;
+  padding-right:3px;
+}
+
+td#RtTime {
+  text-align:center;
+  padding-right:3px;
+}
+
+table#departures {
+  padding:0px;
+  margin:0px;
+}
+
+div#navBar {
+  left: 4px;
+  position:sticky;
+  color:#FFFFFF;
+  background-color:#0011BB;
+  padding-top:12px;
+  padding-bottom:12px;
+  outline:2px solid black;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  z-index:1000;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  color: #DFDFDF;
+  padding: 7px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  font-size:14px;
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  z-index: 1010;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #0077DD;}

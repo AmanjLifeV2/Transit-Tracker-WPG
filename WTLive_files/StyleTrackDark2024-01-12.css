@@ -1,0 +1,96 @@
+body#Track {
+  position:absolute;
+  //width:max-content;
+  z-index:-1;
+  font-family: "Arial", sans-serif;
+  font-size:18px;
+  margin:5px;
+  background-color:#000000;
+}
+
+div#DepartureList {
+  white-space: nowrap;
+  clear:both;
+}
+
+div#error {
+  clear:both;
+}
+
+td#Dest {
+ padding-left: 2px;
+ padding-right: 3px;
+}
+
+div#wrapper {
+  left: 4px;
+}
+
+div#Filters {
+  float:left;
+  display: inline-block;
+  width: 410px;
+  outline: 2px solid white;
+  background-color: #3D3D3D;
+}
+
+div#busList {
+  margin-left: 8px;
+  display: inline-block;
+  overflow-y:scroll;
+  width: 330px;
+  outline: 2px solid white;
+  background-color: #3D3D3D;
+}
+
+div#busModel {
+  margin-left: 8px;
+  display: inline-block;
+  overflow-y:scroll;
+  width: 225px;
+  outline: 2px solid white;
+  background-color: #3D3D3D;
+}
+
+div#garage {
+  margin-left: 8px;
+  display: inline-block;
+  overflow-y:scroll;
+  width: 330px;
+  outline: 2px solid white;
+  background-color: #3D3D3D;
+}
+
+x1#bList {
+  display:block;
+}
+
+table.Route {
+  float:left;
+  outline: 2px solid white;
+  background-color: #3D3D3D;
+}
+
+table.Route2 {
+  float:left;
+  margin-left:10px;
+  position: relative;
+  outline: 2px solid white;
+  background-color: #3D3D3D;
+}
+
+input {
+  width: 50px;
+}
+
+input#txtBus1, input#txtBus2, input#txtRelativeTm, input#txtRefTm {
+  width: 35px;
+}
+
+#TimeLate {
+  color: #FF0000;
+}
+
+#TimeEarly {
+  color: #FFFF00;
+}

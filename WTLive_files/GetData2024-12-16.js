@@ -1,3 +1,6 @@
+//********Coded By Amanj Vakili********
+//This is used to grab API data from Winnipeg Transit
+//********Coded By Amanj Vakili********
 var StopTimes; var StopFeats; var parser = new DOMParser(); var LX; var LX2; var i2; var i3; var Day2 = ""; var SchPer = "";
 
 //Varibles to hold data from Winnipeg Transit API
@@ -22,17 +25,17 @@ var SetTime; var LCheckModel = 0; var LCheckLength = 0; var LCheckColour = 0; va
 var LEstSecRt = []; var LLastEstSecRt = []; var iTT = ""; var HolidaysY = []; var HolidaysM = []; var HolidaysD = []; var HolidayName = []; var DayName; var LBusListBk = []; var LBusListRun = []; var LBusListRunTm = []; var busCount = 0;
 var LModList = []; var xModel; var busModels = []; var xModList; var xGarList; var foundModel = 0; var garages = []; var foundGarage = []; var xGFound; var garageDiv; var LGBusListBk = []; var LGBusListRun = []; var LGBike2 = [];
 var xBreak = 0; var xRunColumn;
-
+//Model Of Bus
 busModels[1] = 'D30LF';
 busModels[2] = 'D40LF';
-busModels[3] = 'Calgary';
+busModels[3] = 'Calgary'; //1995 D40LF
 busModels[4] = 'D40LFR';
 busModels[5] = 'XD40';
 busModels[6] = 'XD60';
-
-garages[1] = 'FRG';
-garages[2] = 'BG';
-garages[3] = 'NG';
+//Bus Garage list
+garages[1] = 'FRG'; //Fort Garry Garage
+garages[2] = 'BG'; //Brandon Garage
+garages[3] = 'NG'; //North Garage
 
 const schCng = new Date('2024-12-15T03:00:00');
 
@@ -192,7 +195,7 @@ function getLive(GL, noLoad) {
   //LEndTm = '04:00:00';
 
   LStartTm = "&start=" + LStartTm;
-
+  
   getLive2();
   if (LRefTime >= 15) { refID = setInterval(refList, LRefTime * 1000); }
 }
@@ -394,13 +397,13 @@ function DoLive() {
     LNum++;
     LCancel[LNum] = LX2.substring(13, 17); //Get cancelled info. 'true' or 'fals'.
 
-    //Get scheduled time
+    //Get STA
     i2 = LX2.indexOf('"scheduled"');
     LSch[LNum] = LX2.substring(i2 + 24, i2 + 32);
     LSch2[LNum] = LSch[LNum];
     LSchDate[LNum] = LX2.substring(i2 + 13, i2 + 23);
 
-    //Get estimated time
+    //Get ETA
     i2 = LX2.indexOf('"estimated"', i2 + 1);
     LEst[LNum] = LX2.substring(i2 + 24, i2 + 32);
     LEstDate[LNum] = LX2.substring(i2 + 13, i2 + 23);
@@ -409,7 +412,7 @@ function DoLive() {
     LEstSec[LNum] = "0".repeat(5 - LEstSec[LNum].length) + LEstSec[LNum];
     
     LEstSort[LNum] = parseInt(LEstDate[LNum].replaceAll("-","") + LEstSec[LNum]);
-    //Get route number/Direction
+    //Get route data
     i2 = LX2.indexOf('"variant"', i2 + 1);
     i3 = LX2.indexOf('-', i2 + 1);
     LRt[LNum] = LX2.substring(i2 + 18, i3);

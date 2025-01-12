@@ -213,12 +213,12 @@ function getLive2() {
     if (LEndTm != '') { i2 += LEndTm; }
     i2 += '&usage=long&route=' + LRtUse;
 
-    //if (LStartTm == "" && LDateUse == "") {
-    //  i2 = "https://api.winnipegtransit.com/v3/stops/" + LStop + "/schedule.json?api-key=yxCT5Ca2Ep5AVLc0z6zz&end=&usage=long&route=" + LRtUse;
-    //}
-    //else {
-    //  i2 = "https://api.winnipegtransit.com/v3/stops/" + LStop + "/schedule.json?api-key=yxCT5Ca2Ep5AVLc0z6zz" + LStartTm + "&end=" + LEndTm + "&usage=long&route=" + LRtUse;
-    //}
+    if (LStartTm == "" && LDateUse == "") {
+      i2 = "https://api.winnipegtransit.com/v3/stops/" + LStop + "/schedule.json?api-key=yxCT5Ca2Ep5AVLc0z6zz&end=&usage=long&route=" + LRtUse;
+    }
+    else {
+    i2 = "https://api.winnipegtransit.com/v3/stops/" + LStop + "/schedule.json?api-key=yxCT5Ca2Ep5AVLc0z6zz" + LStartTm + "&end=" + LEndTm + "&usage=long&route=" + LRtUse;
+    }
 
     fetch(i2)
     .then(response => { if (response.status != 200) { getMultiNum = -1; getAllNum = 0; document.getElementById("error").innerHTML = "<br /><b>Error " + response.status + "</b>"; if (response.status == 404) { document.getElementById("error").innerHTML += "<br />Make sure the stop number and date are correct." } else if (response.status == 500) { document.getElementById("error").innerHTML += "<br />Make sure the stop number and date are correct. Winnipeg Transit's servers may also be experiencing a problem." } } return response.json(); }).then(jsondata => { StopTimes = JSON.stringify(jsondata); setTimeout(DoLive,500); });
